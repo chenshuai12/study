@@ -1,6 +1,7 @@
 package com.cs.redis.consumer;
 
-import lombok.extern.slf4j.Slf4j;
+
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ListOperations;
@@ -9,10 +10,9 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
+
 
 @Component
-@Slf4j
 public class Consumer {
     @Autowired
     private StringRedisTemplate stringRedisTemplate;

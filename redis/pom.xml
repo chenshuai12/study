@@ -54,6 +54,19 @@
 			<version>3.8</version>
 		</dependency>
 		<!--工具包 -->
+		<!--日志 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+		<!--日志 -->
+
 		<dependency>
 			<groupId>com.cs</groupId>
 			<artifactId>redis</artifactId>
