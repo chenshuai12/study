@@ -23,7 +23,6 @@ public class RedissonConfig {
     @Bean
     public RedissonDistributeLocker redissonDistributeLocker(@Autowired RedissonClient redissonClient){
         // redissonClient是本来就由redisson提供给我们，我们创建RedissonDistributeLocker实例交给Spring进行管理
-        System.out.println("ad");
         RedissonDistributeLocker locker = new RedissonDistributeLocker(redissonClient);
         return locker;
     }

@@ -2,14 +2,19 @@ package com.cs.redis.controller;
 
 
 import com.cs.redis.common.RedissonLockAnnotation;
+import com.cs.redis.service.ZookeeperOpera;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
 public class TestLockController {
+    @Autowired
+    private ZookeeperOpera zookeeperOpera;
     public static final int THREAD_SLEEP_TIME = 5000;
     /**
      * 测试接口
@@ -32,5 +37,12 @@ public class TestLockController {
         log.info("业务执行结束.....");
 
         return "success";
+    }
+
+    @GetMapping(value = "testZooLock")
+    public String testZooLock(@RequestParam("seckill_id") long seckillId, @RequestParam("user_id") long userId) {
+        zookeeperOpera.testLock(seckillId, userId);
+
+        return "hello world!";
     }
 }
