@@ -9,4 +9,5 @@ public interface ShopTypeInfoDao {
     public void insert(ShopTypeInfoPO shopTypeInfoPO);
     public void batchInsert(List<ShopTypeInfoPO> shopTypeInfoPOList);
     List<ShopTypeInfoPO> page(RowBounds rowBounds);
+    List<ShopTypeInfoPO> list();
 }

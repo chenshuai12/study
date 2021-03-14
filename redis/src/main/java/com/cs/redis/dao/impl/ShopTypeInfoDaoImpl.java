@@ -1,6 +1,7 @@
 package com.cs.redis.dao.impl;
 
 import com.cs.redis.bean.po.ShopTypeInfoPO;
+import com.cs.redis.bean.po.ShopTypeInfoPOExample;
 import com.cs.redis.dao.ShopTypeInfoDao;
 
 import com.cs.redis.dao.mapper.ShopTypeInfoPOMapper;
@@ -8,6 +9,7 @@ import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -39,5 +41,15 @@ public class ShopTypeInfoDaoImpl implements ShopTypeInfoDao {
     @Override
     public List<ShopTypeInfoPO> page(RowBounds rowBounds) {
         return shopTypeInfoPOMapper.page(rowBounds);
+    }
+
+    @Override
+    @Cacheable(value = {"sampleCache"},key = "1")
+    public List<ShopTypeInfoPO> list(){
+        System.out.println("执行了sql");
+        ShopTypeInfoPOExample example = new ShopTypeInfoPOExample();
+        ShopTypeInfoPOExample.Criteria criteria = example.createCriteria();
+        criteria.andTypeIdIsNotNull();
+        return shopTypeInfoPOMapper.selectByExample(example);
     }
 }

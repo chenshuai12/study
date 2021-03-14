@@ -130,6 +130,12 @@
 			<version>4.0.0-RC1</version>
 		</dependency>
 
+		<!-- SpringCache 缓存 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+
     </dependencies>
 
 	<build>
