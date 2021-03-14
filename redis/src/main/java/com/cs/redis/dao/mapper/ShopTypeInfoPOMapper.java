@@ -3,6 +3,7 @@ package com.cs.redis.dao.mapper;
 import com.cs.redis.bean.po.ShopTypeInfoPO;
 import com.cs.redis.bean.po.ShopTypeInfoPOExample;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 
@@ -28,4 +29,5 @@ public interface ShopTypeInfoPOMapper {
     int updateByPrimaryKeySelective(ShopTypeInfoPO record);
 
     int updateByPrimaryKey(ShopTypeInfoPO record);
+    List<ShopTypeInfoPO> page(RowBounds rowBounds);
 }

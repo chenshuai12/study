@@ -1,5 +1,8 @@
 package com.cs.redis.bean.po;
 
+import lombok.ToString;
+
+@ToString
 public class ShopTypeInfoPO {
     private Integer typeId;
 

@@ -161,4 +161,7 @@
     set type_name = #{typeName,jdbcType=VARCHAR}
     where type_id = #{typeId,jdbcType=INTEGER}
   </update>
+  <select id="page" resultMap="BaseResultMap">
+    select * from shop_type_info
+  </select>
 </mapper>
