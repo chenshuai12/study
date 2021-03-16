@@ -44,7 +44,7 @@ public class ShopTypeInfoDaoImpl implements ShopTypeInfoDao {
     }
 
     @Override
-    @Cacheable(value = {"sampleCache"},key = "1")
+    @Cacheable(value = {"bankId"},key = "1")
     public List<ShopTypeInfoPO> list(){
         System.out.println("执行了sql");
         ShopTypeInfoPOExample example = new ShopTypeInfoPOExample();
