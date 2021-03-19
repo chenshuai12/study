@@ -20,9 +20,10 @@ public class ShopInfoServiceImpl implements ShopInfoService {
     private ProductInfoDao productInfoDao;
 
     @Override
-    @Transactional(rollbackFor = Exception.class,propagation= Propagation.REQUIRES_NEW)
+    @Transactional(rollbackFor = Exception.class,propagation= Propagation.REQUIRED)
     public void insertShopInfo(ShopInfoPO shopInfoPO) {
         shopInfoDao.insert(shopInfoPO);
+        int i = 1/0;
     }
 
 }
