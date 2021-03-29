@@ -28,7 +28,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Transactional(rollbackFor = Exception.class,propagation= Propagation.REQUIRED)
     public void insertShopInfo(ShopInfoPO shopInfoPO) {
         shopInfoDao.insert(shopInfoPO);
-        int i = 1/0;
+//        int i = 1/0;
     }
 
     @Override
