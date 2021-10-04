@@ -1,9 +1,7 @@
 package com.cs.redis.service.impl;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.cs.redis.bean.po.ProductInfoPO;
 import com.cs.redis.bean.po.ShopInfoPO;
-import com.cs.redis.bean.po.ShopTypeInfoPO;
 import com.cs.redis.dao.ProductInfoDao;
 import com.cs.redis.dao.ShopInfoDao;
 import com.cs.redis.service.ProductInfoService;
@@ -25,16 +23,16 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     private ShopInfoService shopInfoService;
 
     @Override
-    @Transactional(rollbackFor = Exception.class,propagation= Propagation.REQUIRED)
+    @Transactional(rollbackFor = Exception.class)
     public void insertShopInfo(ShopInfoPO shopInfoPO) {
         shopInfoDao.insert(shopInfoPO);
-//        int i = 1/0;
+        int i = 1/0;
     }
 
     @Override
 //    @Transactional(rollbackFor = Exception.class,propagation= Propagation.REQUIRED)
     public void insertProductInfo(ProductInfoPO productInfoPO,ShopInfoPO shopInfoPO) {
         productInfoDao.insert(productInfoPO);
-        insertShopInfo(shopInfoPO);
+        this.insertShopInfo(shopInfoPO);
     }
 }

@@ -20,6 +20,7 @@ public class ProductInfoServiceImplTest {
     private ProductInfoService productInfoService;
 
     @Test
+
     public void insertProductInfo(){
         ShopInfoPO shopInfoPO = new ShopInfoPO();
         shopInfoPO.setShopId(1L);
