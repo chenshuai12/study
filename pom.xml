@@ -6,7 +6,11 @@
 
     <groupId>com.cs</groupId>
     <artifactId>study</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.0</version>
+    <modules>
+        <module>netty</module>
+    </modules>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
