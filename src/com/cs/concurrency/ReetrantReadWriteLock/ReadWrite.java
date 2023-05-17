@@ -8,7 +8,6 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@ToString
 @Builder
 public class ReadWrite {
     /**
@@ -50,5 +49,13 @@ public class ReadWrite {
         }finally {
             rwLock.writeLock().unlock();
         }
+    }
+
+    public int getData() {
+        return data;
+    }
+
+    public void setData(int data) {
+        this.data = data;
     }
 }

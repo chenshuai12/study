@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1transitional.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>cs学netty</title>
+        <script type="text/javascript">
+            var socket;
+            if (!window.WebSocket){
+                window.WebSocket = window.MozWebSocket;
+            }
+            if (window.WebSocket){
+                socket = new WebSocket("ws://localhost:8081/ws");
+                socket.onmessage = function (event){
+                    var ta = document.getElementById('responseText');
+                    ta.value += event.data + "\r\n";
+                };
+                socket.onopen = function (event){
+                    var ta = document.getElementById('responseText');
+                    ta.value = "已连接";
+                };
+                socket.onclose = function (event){
+                    var ta = document.getElementById('responseText');
+                    ta.value = "已关闭";
+                };
+            }else {
+                alert("您的浏览器不支持WebSocket协议!");
+            }
+            function send(message){
+                if (!window.WebSocket){return ;}
+                if (socket.readyState == WebSocket.OPEN){
+                    socket.send(message);
+                }else {
+                    alert("WebSocket连接没有建立成功!");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="return false;">
+            <hr color="black" />
+            <h3>客户端发送的信息</h3>
+                <label>名字</label><input type="text" name="uid" value="cs学netty" /> <br />
+                <label>内容</label><input type="text" name="message" value="hello,我是cs"/> <br />
+                <br/> <input type="button" value="点击发送" onclick="send(this.form.uid.value + ':' + this.form.message.value)"/>
+                <hr color="black" />
+                <h3>服务端返回的应答信息</h3>
+                <textarea id="responseText" style="width: 900px;height: 300px"></textarea>
+        </form>
+    </body>
+</html>

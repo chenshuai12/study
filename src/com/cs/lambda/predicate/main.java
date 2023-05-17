@@ -9,6 +9,7 @@ public class main {
         System.out.println(predicate.test("Lambda"));
         System.out.println(predicate.negate().test("Lambda"));
         Predicate<String> predicate1 = x -> x.startsWith("sc");
-        System.out.println(predicate.and(x -> x.length() == 2).test("cs") && predicate1.test("sc"));
+        Predicate<String> predicate2 = x -> x.length() == 2;
+        System.out.println(predicate.and(predicate2).test("cs") && predicate1.test("sc"));
     }
 }
