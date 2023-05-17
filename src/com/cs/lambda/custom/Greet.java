@@ -2,6 +2,7 @@ package com.cs.lambda.custom;
 
 @FunctionalInterface
 interface Greet {
+    String name = "cs";
     void say(String toWho);
 
     default void dog(String toWho){
