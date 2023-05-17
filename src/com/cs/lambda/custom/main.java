@@ -8,6 +8,7 @@ public class main {
         greet.dog("hello world");
         greet.cat("hello world");
         Greet.pig("hello world");
+        Greet.duck("Hello world");
 
         Child child = new Child();
         child.say("hello world");

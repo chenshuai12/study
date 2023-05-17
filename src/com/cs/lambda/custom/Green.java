@@ -19,4 +19,8 @@ public interface Green {
         System.out.println("I am a green pig");
     }
 
+    static void duck(String toWho) {
+        System.out.println("I am a green duct");
+    }
+
 }

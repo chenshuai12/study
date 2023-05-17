@@ -15,4 +15,8 @@ interface Greet {
     static void pig(String toWho){
         System.out.println("I am a greet pig");
     }
+
+    static void duck(String toWho) {
+        System.out.println("I am a greet duct");
+    }
 }
