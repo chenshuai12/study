@@ -5,3 +5,6 @@
 !/netty/target/
 !/redis/target/
 !/redis/HELP.md
+!/.idea/misc.xml
+!/.idea/vcs.xml
+!/.idea/workspace.xml
