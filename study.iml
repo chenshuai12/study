@@ -8,10 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/netty/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/redis/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/redis/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/redis/src/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spring/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/spring/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/spring/src/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
   </component>
