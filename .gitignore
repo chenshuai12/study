@@ -1,2 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 !/.idea/
+!/out/
+!/netty/target/
+!/netty/target/
+!/redis/target/
+!/redis/HELP.md
